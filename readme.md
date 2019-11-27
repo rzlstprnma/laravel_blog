@@ -9,15 +9,14 @@ Aplikasi ini memiliki fitur sebagai berikut:
 6. Sorting berdasarkan kategori
 7. Sorting berdasarkan tag
 
-<b>Cara menjalankan Aplikasi :</b>
-
-Simpan Project di /htdocs (kalau pake xampp)
-
-import database (pr_laravelblog.sql)
-
-di dalam directory project buka terminal, ketikan "php artisan serve"
-
-buka browser, ketikan url "localhost:8000"
+Cara menjalankan Aplikasi : 
+- Simpan Project di /htdocs (kalau pake xampp)
+- import database (pr_laravelblog.sql)
+- buka folder project, copykan .env.example, menjadi .env
+- isi DB_DATABASE, DB_USERNAME, DB_PASSWORD, sesuaikan dengan settingan database kamu
+- di dalam directory project buka terminal, ketikan "php artisan key:generate"
+- di dalam directory project buka terminal, ketikan "php artisan serve"
+- buka browser, ketikan url "localhost:8000"
 
 
   =================================================
