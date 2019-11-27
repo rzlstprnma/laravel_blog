@@ -10,6 +10,7 @@
     }
     .jumbotron{ 
         height: 420px;
+        background: linear-gradient(to right, #4dd599, #ffdc34 99%);
     }
     .card img{
         width: 100%;
@@ -40,17 +41,21 @@
         overflow: hidden; 
     }
 
+    .btn-primary{
+        color: #ffffff !important;
+    }
+
 </style>
 @endsection
 
 @section('content')
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-3">Welcome to tutu.com</h1>
-            <p class="lead">tutu.com can solved your problem</p>
+            <h1 class="display-3">Welcome to Ritesite</h1>
+            <p class="lead">Ritesite can solved your problem</p>
             <hr class="my-2">
             <p class="lead">
-                <a class="btn btn-primary btn-lg" href="#" role="button">Blog</a> <a class="btn btn-primary btn-lg" href="Jumbo action link" role="button">Portfolio</a>
+                <a class="btn btn-primary btn-lg" href="/blog" role="button">Read A Post</a>
             </p>
         </div>
     </div>    
