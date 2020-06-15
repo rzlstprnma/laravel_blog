@@ -12,6 +12,7 @@ Aplikasi ini memiliki fitur sebagai berikut:
 Cara menjalankan Aplikasi : 
 - Simpan Project di /htdocs (kalau pake xampp)
 - import database (pr_laravelblog.sql)
+- jalankan "composer install" di dalam terminal/cmd
 - buka folder project, copykan .env.example, menjadi .env
 - isi DB_DATABASE, DB_USERNAME, DB_PASSWORD, sesuaikan dengan settingan database kamu
 - di dalam directory project buka terminal, ketikan "php artisan key:generate"
