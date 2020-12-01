@@ -42,7 +42,6 @@
                     </div>
                 </div>
             </div>
-
             <div id="socialMedia" class="mt-3">
                 <div class="container">
                     <h5>Social Media</h5>
@@ -58,70 +57,62 @@
                             </tbody>
                         </table>
                     </div>
-                    <button type="button" class="btn btn-warning btn-sm mt-3" data-toggle="modal" data-target="#medsos">Social Media baru</button><br><br>
-                    
-
+                    <button type="button" class="btn btn-warning btn-sm mt-3" data-toggle="modal" data-target="#medsos">Social Media baru</button><br><br>                    
                 </div>
             </div>
         </div>
 
         <div class="col-lg-8">
-                <div id="skills">
-                        <h4 class="float-left">#Skills</h4>
-                        <button type="button" class="btn btn-warning btn-sm float-right" data-toggle="modal" data-target="#modelId">Skill Baru</button>
+            <div id="skills">
+            <h4 class="float-left">#Skills</h4>
+            <button type="button" class="btn btn-warning btn-sm float-right" data-toggle="modal" data-target="#modelId">Skill Baru</button>
+                <table class="list-skills">
+                    <tbody>
+                        @foreach ($skills as $skill)
+                        <tr height="50px">
+                            <td width="20%">{{$skill->skill_name}}</td>
+                            <td width="70%"><div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="{{$skill->achieved}}" aria-valuemin="0" aria-valuemax="100" style="width: {{$skill->achieved}}%;">
+                                <span>{{$skill->achieved}}%</span>
+                                </div>
+                                </div>
+                            </td>
+                            <td>
+                                <a href="/admin/skill/destroy/{{$skill->id}}" class="btn btn-sm btn-warning">X</a>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
 
-                            <table class="list-skills">
-                                <tbody>
-                                    @foreach ($skills as $skill)
-                                    <tr height="50px">
-                                        <td width="20%">{{$skill->skill_name}}</td>
-                                        <td width="70%"><div class="progress">
-                                             <div class="progress-bar" role="progressbar" aria-valuenow="{{$skill->achieved}}" aria-valuemin="0" aria-valuemax="100" style="width: {{$skill->achieved}}%;">
-                                            <span>{{$skill->achieved}}%</span>
-                                            </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <a href="/admin/skill/destroy/{{$skill->id}}" class="btn btn-sm btn-warning">X</a>
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                    </div>
-
-        </div>
-    </div>
-
-    <div id="portfolio">
-            <div class="container">
-                <strong>#Portfolio</strong><br>
-                <a href="/admin/portfolio/create" class="btn btn-warning btn-sm">Portfolio Baru</a>
-                <br><br>
-                <div class="row">
-                    @foreach ($portfolios as $portfolio)
-                    <div class="col-lg-4">
-                        <div class="container">
-                            <div class="portfolio-card">
-                                <img src="{{$portfolio->getPhoto()}}" alt="Portfolio Images">
-                                <div class="portfolio-body container">
-                                    <div class="title-portfolio">
-                                        <h4>{{$portfolio->project_name}}</h4>
-                                    </div>
-                                    <p>{{$portfolio->description}}</p>    
-                                </div>         
-                                <div class="card-footer">
-                                    <a href="/admin/portfolio/destroy/{{$portfolio->id}}" class="btn btn-danger">X</a>
-                                </div>                       
-                            </div>
+        <div id="portfolio">
+            <h4 class="float-left">#Portfolio</h4><br>
+            <a href="/admin/portfolio/create" class="btn btn-warning float-right btn-sm">Portfolio Baru</a>
+            <br><br>
+            <div class="row">
+                @foreach ($portfolios as $portfolio)
+                <div class="col-lg-6">
+                    <div class="container">
+                        <div class="portfolio-card">
+                            <img src="{{$portfolio->getPhoto()}}" alt="Portfolio Images">
+                            <div class="portfolio-body container">
+                                <div class="title-portfolio">
+                                    <h4>{{$portfolio->project_name}}</h4>
+                                </div>
+                                <p>{{$portfolio->description}}</p>    
+                            </div>         
+                            <div class="card-footer">
+                                <a href="/admin/portfolio/destroy/{{$portfolio->id}}" class="btn btn-danger">X</a>
+                            </div>                       
                         </div>
                     </div>
-                    @endforeach
-                    
                 </div>
+                @endforeach
             </div>
         </div>
-
+        </div>
+    </div>
 </div>
 </section>
 

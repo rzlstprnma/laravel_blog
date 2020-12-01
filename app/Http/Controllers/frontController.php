@@ -32,7 +32,7 @@ class frontController extends Controller
     public function blog(){
         $categories = Category::all();
         $tags = Tag::all();
-        $posts = Post::paginate(3);
+        $posts = Post::where('isPublished', 1)->paginate(3);
         return view('blog', compact('categories', 'tags', 'posts'));
     }
 
